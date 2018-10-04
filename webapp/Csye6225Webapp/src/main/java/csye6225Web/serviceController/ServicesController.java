@@ -20,36 +20,36 @@ import repository.UserRepository;
      @GetMapping("/currentTime")
     public @ResponseBody String getCurrentTime(@RequestHeader(value="User-Agent")String user_header)
     {
-//
-//
-//        if(user_header.equals("curl/7.59.0"))
-//        {
-//            return "Please login!\n";
-//        }
-//        String userName=user_header.split(":")[0];
-//        String password=user_header.split(":")[1];
-//
-//        for (User a:userRepository.findAll())
-//        {
-//            if(a.getUserName().equals(userName) && checkPass(password,a.getPassword()))
-//            {
-//                Date date= new Date();
-//                SimpleDateFormat datetimeFormat=new SimpleDateFormat();
-//                String currenttime=datetimeFormat.format(date);
-//                return "CurrentTime:"+currenttime+"\n";
-//            }
-//
-//            if(a.getUserName().equals(userName) && !checkPass(password,a.getPassword()))
-//            {
-//                return "Incorrect password !!\n";
-//            }
-//
-//        }
-//
-//         return "User name does not exist!\n";
-//
-//
-//    }
+
+
+       if(user_header.equals("curl/7.59.0"))
+       {
+           return "Please login!\n";
+       }
+       String userName=user_header.split(":")[0];
+       String password=user_header.split(":")[1];
+
+       for (User a:userRepository.findAll())
+       {
+           if(a.getUserName().equals(userName) && checkPass(password,a.getPassword()))
+           {
+               Date date= new Date();
+               SimpleDateFormat datetimeFormat=new SimpleDateFormat();
+               String currenttime=datetimeFormat.format(date);
+               return "CurrentTime:"+currenttime+"\n";
+           }
+
+           if(a.getUserName().equals(userName) && !checkPass(password,a.getPassword()))
+           {
+               return "Incorrect password !!\n";
+           }
+
+       }
+
+        return "User name does not exist!\n";
+
+
+   }
 
 
    private boolean checkPass(String plainPassword, String hashedPassword) {
