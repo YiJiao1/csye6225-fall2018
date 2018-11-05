@@ -44,7 +44,7 @@ Resources:
         Statement:
         - Effect: Allow
           Action:
-          - s3:*
+          - s3:PutObject
           Resource: "*"
       Users:
       - !Ref CIUser
@@ -61,7 +61,7 @@ Resources:
           - codedeploy:GetApplicationRevision
           - codedeploy:*
           Resource:
-          - arn:aws:codedeploy:us-east-1:398590284929:application:MyCodeDeployApp
+          - arn:aws:codedeploy:us-east-1:552013080991:application:MyCodeDeployApp
         - Effect: Allow
           Action:
           - codedeploy:CreateDeployment
@@ -74,9 +74,9 @@ Resources:
           - codedeploy:GetDeploymentConfig
           - codedeploy:*
           Resource:
-          - arn:aws:codedeploy:us-east-1:398590284929:deploymentconfig:CodeDeployDefault.OneAtATime
-          - arn:aws:codedeploy:us-east-1:398590284929:deploymentconfig:CodeDeployDefault.HalfAtATime
-          - arn:aws:codedeploy:us-east-1:398590284929:deploymentconfig:CodeDeployDefault.AllAtOnce
+          - arn:aws:codedeploy:us-east-1:552013080991:deploymentconfig:CodeDeployDefault.OneAtATime
+          - arn:aws:codedeploy:us-east-1:552013080991:deploymentconfig:CodeDeployDefault.HalfAtATime
+          - arn:aws:codedeploy:us-east-1:552013080991:deploymentconfig:CodeDeployDefault.AllAtOnce
       Users:
       - !Ref CIUser
 
@@ -130,7 +130,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: 'code-deploy.csye6225-fall2018-leocheng.me'
+      BucketName: 'code-deploy.csye6225-fall2018-jiaoyi.me'
       AccessControl: PublicRead
 
 

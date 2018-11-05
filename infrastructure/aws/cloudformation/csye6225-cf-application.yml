@@ -133,7 +133,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: 'csye6225-fall2018-chengl.me.csye6225.com'
+      BucketName: 'csye6225-fall2018-jiaoyi.me.csye6225.com'
       AccessControl: PublicRead
   myDynamoDBTable:
     Type: AWS::DynamoDB::Table
